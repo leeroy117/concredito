@@ -1,0 +1,23 @@
+<div class="row mt-3 ml-3">
+    <h1>Listado de prospectos</h1>
+</div>
+<hr>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Primer apellido</th>
+            <th scope="col">Segundo apellido</th>
+            <th scope="col">Estatus</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prospect of prospects" (click)="getProspect(prospect.id_prospecto)">
+            <td>{{ prospect.nombre }}</td>
+            <td>{{ prospect.primer_apellido }}</td>
+            <td>{{ prospect.segundo_apellido }}</td>
+            <td>{{ prospect.status }}</td>
+        </tr>
+    </tbody>
+</table>

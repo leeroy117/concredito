@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="row mt-3 ml-3">
+        <h1>Registrar prospecto</h1>
+    </div>
+    <hr>
+    <div class="row justify-content-center mt-5">
+        <form [formGroup]="newForm" (ngSubmit)="postForm(newForm.value)">
+            <div class="row">
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Nombre:</mat-label>
+                        <input matInput formControlName="nombre">
+                        <mat-error *ngIf="isValidField('nombre')">
+                            {{ getErrorMessage("nombre")}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Primer apellido:</mat-label>
+                        <input matInput formControlName="primer_apellido">
+                        <mat-error *ngIf="isValidField('primer_apellido')">
+                            {{ getErrorMessage("primer_apellido")}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Segundo apellido:</mat-label>
+                        <input matInput formControlName="segundo_apellido">
+                        <mat-error *ngIf="isValidField('segundo_apellido')">
+                            {{ getErrorMessage("segundo_apellido")}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Calle:</mat-label>
+                        <input matInput formControlName="calle">
+                        <mat-error *ngIf="isValidField('calle')">
+                            {{ getErrorMessage("calle")}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3 ml-2">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Numero:</mat-label>
+                        <input matInput formControlName="numero">
+                        <mat-error *ngIf="isValidField('numero')">
+                            {{ getErrorMessage("numero")}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3 ml-2">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Colonia:</mat-label>
+                        <input matInput formControlName="colonia">
+                        <mat-error *ngIf="isValidField('colonia')">
+                            {{ getErrorMessage("colonia")}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Codigo postal:</mat-label>
+                        <input matInput formControlName="cp">
+                        <mat-error *ngIf="isValidField('cp')">
+                            {{ getErrorMessage("cp")}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Telefono:</mat-label>
+                        <input matInput formControlName="tel">
+                        <mat-error *ngIf="isValidField('tel')">{{ getErrorMessage("tel")}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>RFC:</mat-label>
+                        <input matInput formControlName="rfc">
+                        <mat-error *ngIf="isValidField('rfc')">{{ getErrorMessage("rfc")}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Estatus</mat-label>
+                        <mat-select formControlName="status">
+                            <mat-option [value]="1">Enviado</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="isValidField('status')">{{ getErrorMessage("status")}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-3 ml-1">
+                <button type="submit" [disabled]="!newForm.valid" mat-raised-button color="primary">
+                    Guardar
+                </button>
+                <button (click)="exit()" type="button" class="ml-3" id="exit" mat-raised-button color="warn">
+                    Salir
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>

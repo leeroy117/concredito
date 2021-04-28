@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row mt-3 ml-3">
+        <h1>Información de prospecto</h1>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <form [formGroup]="editForm">
+            <div class="row">
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Nombre:</mat-label>
+                        <input matInput formControlName="nombre" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Primer apellido:</mat-label>
+                        <input matInput formControlName="primer_apellido" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Segundo apellido:</mat-label>
+                        <input matInput formControlName="segundo_apellido" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Calle:</mat-label>
+                        <input matInput formControlName="calle" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3 ml-2">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Numero:</mat-label>
+                        <input matInput formControlName="numero" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3 ml-2">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Colonia:</mat-label>
+                        <input matInput formControlName="colonia" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Codigo postal:</mat-label>
+                        <input matInput formControlName="cp" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Telefono:</mat-label>
+                        <input matInput formControlName="tel" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>RFC:</mat-label>
+                        <input matInput formControlName="rfc" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Observaciones</mat-label>
+                        <textarea matInput formControlName="observaciones" readonly></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Status</mat-label>
+                        <mat-select [(value)]="editForm.value.status" formControlName="status">
+                            <mat-option [value]="1">Enviado</mat-option>
+                            <mat-option [value]="2">Autorizado</mat-option>
+                            <mat-option [value]="3">Rechazado</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mb-3 ml-1">
+                <button type="button" (click)="exit()" class="ml-3" mat-raised-button color="warn">Salir</button>
+            </div>
+        </form>
+    </div>
+</div>

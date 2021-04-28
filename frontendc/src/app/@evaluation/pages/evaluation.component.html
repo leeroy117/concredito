@@ -1,0 +1,16 @@
+<div class="d-flex" id="wrapper">
+
+    <app-sidebar *ngIf="toggledValue"></app-sidebar>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <!-- Con el evento del hijo toggledChange se llama a la funcion toggled en el padre -->
+        <app-header (toggledChange)="toggled($event)"></app-header>
+
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
